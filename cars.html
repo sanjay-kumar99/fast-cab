@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Select Your Ride</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- HEADER -->
+    <div class="bg-yellow-400 p-4 text-center font-bold text-xl">
+      Choose Your Perfect Ride
+    </div>
+
+    <!-- FILTER -->
+    <div class="flex justify-center gap-4 mt-6">
+      <button onclick="filterCars('all')" class="filter-btn">All</button>
+      <button onclick="filterCars('5')" class="filter-btn">5-Seater</button>
+      <button onclick="filterCars('7')" class="filter-btn">7-Seater</button>
+    </div>
+
+    <!-- CARS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+      <div class="car-card" data-seat="7">
+        <img src="images/Ertiga.jpeg" class="w-40 mx-auto" />
+        <h3 class="font-bold text-lg">Maruti Ertiga (7 Seater)</h3>
+        <p>₹16 / km • AC • Spacious</p>
+        <button onclick="openBooking()" class="book-btn">Select & Book</button>
+      </div>
+
+      <div class="car-card" data-seat="5">
+        <img src="images/Swift.jpeg" class="w-40 mx-auto" />
+        <h3 class="font-bold text-lg">Swift Dzire (5 Seater)</h3>
+        <p>₹15 / km • AC • Comfortable</p>
+        <button onclick="openBooking()" class="book-btn">Select & Book</button>
+      </div>
+
+      <div class="car-card" data-seat="5">
+        <img src="images/AURA.jpeg" class="w-40 mx-auto" />
+        <h3 class="font-bold text-lg">Celerio</h3>
+        <p>Budget Friendly</p>
+        <button onclick="openBooking()" class="book-btn">Select & Book</button>
+      </div>
+
+      <div class="car-card" data-seat="7">
+        <img src="images/Kia.jpeg" class="w-40 mx-auto" />
+        <h3 class="font-bold text-lg">Toyota Rumion</h3>
+        <p>Premium Comfort</p>
+        <button onclick="openBooking()" class="book-btn">Select & Book</button>
+      </div>
+    </div>
+
+    <!-- BOOKING MODAL -->
+    <div
+      id="bookingModal"
+      class="fixed inset-0 bg-black/60 hidden flex items-center justify-center"
+    >
+      <div class="bg-white p-6 rounded-xl w-[90%] max-w-md">
+        <h2 class="text-xl font-bold mb-3">Book Your Ride</h2>
+
+        <input
+          id="userName"
+          placeholder="Your Name"
+          class="w-full border p-2 mb-2"
+        />
+
+        <input
+          id="userPhone"
+          placeholder="Phone Number"
+          class="w-full border p-2 mb-2"
+        />
+
+        <input
+          id="pickup"
+          placeholder="Pickup Location"
+          class="w-full border p-2 mb-2"
+        />
+
+        <input
+          id="drop"
+          placeholder="Drop Location"
+          class="w-full border p-2 mb-2"
+        />
+
+        <input
+          id="rideDate"
+          type="datetime-local"
+          class="w-full border p-2 mb-3"
+        />
+
+        <button
+          onclick="submitBooking()"
+          class="w-full bg-green-600 text-white py-2 rounded"
+        >
+          Confirm Booking
+        </button>
+
+        <button onclick="closeBooking()" class="mt-3 w-full text-red-500">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <!-- JS -->
+    <script>
+      function filterCars(seat) {
+        document.querySelectorAll(".car-card").forEach((card) => {
+          card.style.display =
+            seat === "all" || card.dataset.seat === seat ? "block" : "none";
+        });
+      }
+
+      function openBooking() {
+        document.getElementById("bookingModal").classList.remove("hidden");
+      }
+
+      function closeBooking() {
+        document.getElementById("bookingModal").classList.add("hidden");
+      }
+
+      function submitBooking() {
+        fetch("http://localhost:5000/api/book", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: document.getElementById("userName").value,
+            phone: document.getElementById("userPhone").value,
+            pickup: document.getElementById("pickup").value,
+            drop_location: document.getElementById("drop").value,
+            ride_datetime: document.getElementById("rideDate").value,
+          }),
+        })
+          .then((res) => res.json())
+          .then(() => {
+            alert("Booking Successful ✅");
+            closeBooking();
+          })
+          .catch(() => {
+            alert("Server Error ❌");
+          });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | Fast Cab</title>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+  </style>
+</head>
+<body>
+
+<!-- ================= TOP HEADER ================= -->
+<div class="top-header">
+  <div><i class="fa-solid fa-taxi"></i> FAST CAB</div>
+  <div>Call Us : <a href="tel:+926239662067">+92 6239662067</a></div>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html" class="active">Contact Us</a>
+</div>
+
+<!-- ================= CONTACT SECTION ================= -->
+<section class="contact-page py-12 px-4">
+
+  <h1 class="text-3xl font-bold text-center mb-3">Contact Us</h1>
+
+  <p class="contact-text text-center max-w-2xl mx-auto mb-10">
+    If you have any questions or reliable welcome, send a mail and we will
+    pickup you to stop as soon.
+  </p>
+
+  <!-- GRID -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+
+    <!-- LEFT -->
+    <div data-aos="fade-right">
+
+      <div class="contact-map mb-5">
+        <iframe
+          src="https://www.google.com/maps?q=FAST%20CAB%20Taxi%20Service&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <div class="contact-buttons flex flex-col sm:flex-row gap-4">
+        <a href="tel:+926239662067" class="btn yellow">
+          <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+
+        <a href="https://wa.me/926239662067" target="_blank" class="btn whatsapp">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+        </a>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div data-aos="fade-left">
+
+      <form id="contactForm" class="contact-form bg-gray-300">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <button type="submit" class="btn yellow w-full">Send Message</button>
+      </form>
+
+      <p id="formMsg"></p>
+
+      <div class="follow-us mt-6">
+        <p>Follow Us :</p>
+        <div class="social-icons mt-2">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-whatsapp"></i>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- MOBILE STICKY -->
+  <a href="tel:+926239662067" class="sticky-call">
+    <i class="fa-solid fa-phone"></i> Call Now
+  </a>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  © 2026 Fast Cab | All Rights Reserved
+</footer>
+
+<script src="js/script.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 900, once: true });
+</script>
+
+</body>
+</html>

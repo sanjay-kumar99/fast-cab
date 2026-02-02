@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Fast Cab | Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Poppins', sans-serif; }
+</style>
+</head>
+<body>
+
+<header class="top-header">
+  <div class="logo"><i class="fa-solid fa-taxi"></i> CABS 24 SERVICES </div>
+  <div class="call">Call Us : +92 6239662067</div>
+</header>
+
+<nav class="navbar">
+  <a href="index.html" class="active">Home</a>
+  <a href="about.html">About Us</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact Us</a>
+</nav>
+
+<section class="banner">
+  <div class="banner-content">
+    <video  autoplay muted loop playsinline class="bg-video"> <source src="images/video.MP4"></video>
+    <h1>Reliable Taxi Service</h1>
+    <p>Book Your Ride Now!</p>
+    <!-- Book Now Button -->
+<a href="cars.html"
+class="inline-block bg-red-600 text-white px-8 py-3 rounded-lg font-semibold
+       hover:bg-red-700 transition transform hover:scale-105">
+Book Now
+</a>
+  </div>
+</section>
+
+<section class="py-10 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+      <!-- Service 1 -->
+      <div class="flex flex-col items-center text-center p-6
+                  rounded-xl shadow hover:shadow-lg transition bg-blue-300 ">
+        <i class="fa-solid fa-car text-4xl text-yellow-500 mb-3"></i>
+        <h3 class="text-lg font-semibold">Local Rides</h3>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="flex flex-col items-center text-center p-6
+                  rounded-xl shadow hover:shadow-lg transition bg-blue-300">
+        <i class="fa-solid fa-plane text-4xl text-yellow-500 mb-3"></i>
+        <h3 class="text-lg font-semibold">Airport Transfers</h3>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="flex flex-col items-center text-center p-6
+                  rounded-xl shadow hover:shadow-lg transition bg-blue-300">
+        <i class="fa-solid fa-route text-4xl text-yellow-500 mb-3"></i>
+        <h3 class="text-lg font-semibold">Outstation Trips</h3>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="booking">
+  <h2>Book Your Cab</h2>
+  <form class="booking-form bg-gray-300" onsubmit="event.preventDefault(); bookNow();" >
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="phone" placeholder="Phone Number" required>
+    <input type="text" id="pickup" placeholder="Pickup Location" required>
+    <input type="text" id="drop_location" placeholder="Drop Location" required>
+    <input type="datetime-local" id="ride_datetime" required>
+
+    <div class="btn-group">
+        <button type="submit" class="btn yellow">Book Now</button>
+        <a href="tel:+923001234567" class="btn green"><i class="fa-solid fa-phone"></i> Call Us</a>
+        <a href="https://wa.me/923001234567" target="_blank" class="btn whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+</form>
+  </form>
+</section>
+
+<script>
+  async function bookNow() {
+    const bookingData = {
+        name: document.getElementById('name').value,
+        phone: document.getElementById('phone').value,
+        pickup: document.getElementById('pickup').value,
+        drop_location: document.getElementById('drop_location').value,
+        ride_datetime: document.getElementById('ride_datetime').value
+    };
+
+    try {
+        const response = await fetch('http://localhost:5000/api/book', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(bookingData)
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+            alert("✅ Booking Successful!");
+            window.location.href = "admin.html";
+        } else {
+            alert("❌ Error: " + data.message);
+        }
+    } catch (error) {
+        alert("Server band hai bhai!");
+    }
+}
+</script>
+
+<a href="tel:+923001234567" class="sticky-call">
+    <i class="fa-solid fa-phone"></i> Call Now
+</a>
+
+<footer>©️ 2026 Fast Cab. All Rights Reserved.</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+    once: true,
+    easing: "ease-in-out"
+  });
+</script>
+
+<script> function submitHomeBooking(){ fetch("http://localhost:5000/api/book",{ method:"POST", headers:{ "Content-Type":"application/json" }, body: JSON.stringify({ name: document.getElementById("name").value, phone: document.getElementById("phone").value, pickup: document.getElementById("pickup").value, drop_location: "Not Selected", ride_datetime: new Date().toISOString().slice(0,19).replace("T"," ") }) }) .then(()=>alert("Booking Successful ✅")); } </script>
+</body>
+</html>
