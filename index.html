@@ -172,7 +172,7 @@
       <h2>Book Your Cab</h2>
 
       <form
-        class="booking-form relative overflow-hidden rounded-xl text-white"
+        class="booking-form relative overflow-hidden rounded-xl text-dark"
         onsubmit="
           event.preventDefault();
           bookNow();
@@ -240,6 +240,10 @@
 
           if (data.success) {
             alert("✅ Booking Successful!");
+            // Form reset
+            document.getElementById("contactForm")?.reset();
+            document.querySelector(".booking-form")?.reset(); // agar id nahi hai to class se
+
             window.location.href = "admin.html";
           } else {
             alert("❌ Error: " + data.message);
