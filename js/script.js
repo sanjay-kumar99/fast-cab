@@ -7,9 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const links = document.querySelectorAll(".navbar a");
   const currentPage = window.location.pathname.split("/").pop();
 
-  links.forEach(link => {
+  links.forEach((link) => {
     const linkPage = link.getAttribute("href");
-    if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
+    if (
+      linkPage === currentPage ||
+      (currentPage === "" && linkPage === "index.html")
+    ) {
       link.classList.add("active");
     } else {
       link.classList.remove("active");
@@ -45,15 +48,15 @@ if (bookingForm) {
         phone,
         pickup,
         drop_location,
-        ride_datetime
-      })
+        ride_datetime,
+      }),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         alert("✅ Booking Successful!");
         bookingForm.reset();
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err);
         alert("❌ Server Error");
       });
@@ -64,7 +67,6 @@ if (bookingForm) {
    CONTACT FORM → WHATSAPP
 ========================= */
 document.addEventListener("DOMContentLoaded", function () {
-
   const contactForm = document.getElementById("contactForm");
 
   if (!contactForm) return;
@@ -84,14 +86,21 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    const whatsappNumber = "7828546904"; // without +
+    const whatsappNumber = "6239662067"; // without +
 
     const whatsappText =
       "Fast Cab Contact Form\n\n" +
-      "Name: " + name + "\n" +
-      "Phone: " + phone + "\n" +
-      "Email: " + email + "\n" +
-      "Message: " + message;
+      "Name: " +
+      name +
+      "\n" +
+      "Phone: " +
+      phone +
+      "\n" +
+      "Email: " +
+      email +
+      "\n" +
+      "Message: " +
+      message;
 
     const whatsappURL =
       "https://wa.me/" +
@@ -106,5 +115,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     contactForm.reset();
   });
-
 });

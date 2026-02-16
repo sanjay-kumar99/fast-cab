@@ -28,53 +28,235 @@
     </style>
   </head>
   <body>
-    <header class="top-header">
-      <div class="logo"><i class="fa-solid fa-taxi"></i> FAST CAB</div>
-      <div class="call">Call Us : +92 6239662067</div>
-    </header>
+    <!-- NAVBAR SAME -->
+    <nav class="bg-yellow-500 shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center space-x-2">
+            <img src="images/logo.png" class="h-20 w-auto" />
+            <span class="font-bold text-xl text-red-600">Fast Cab</span>
+          </div>
 
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html" class="active">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact Us</a>
+          <div class="hidden md:flex space-x-8 font-semibold text-black">
+            <a href="index.html" class="hover:text-red-600">Home</a>
+            <a href="about.html" class="hover:text-red-600">About</a>
+            <a href="services.html" class="hover:text-red-600">Services</a>
+            <a href="contact.html" class="hover:text-red-600">Contact</a>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-5 text-sm">
+            <span
+              ><i class="fa-solid fa-phone text-red-600"></i> +92
+              6239662067</span
+            >
+            <span
+              ><i class="fa-solid fa-envelope text-red-600"></i>
+              cabsservice24@gmail.com</span
+            >
+          </div>
+
+          <button id="menuBtn" class="md:hidden text-2xl">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden flex flex-col space-y-3 pb-4 font-medium"
+        >
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
     </nav>
 
-    <section class="page-section">
-      <h1 class="font-bold bg-gray-300">About Us</h1>
-      <p class="font-semibold">
-        Fast Cab is a trusted taxi service providing safe, on-time and
-        affordable rides. Our experienced drivers ensure comfort and customer
-        satisfaction.
-      </p>
+    <!-- HERO -->
+    <section
+      class="relative h-[320px] flex items-center justify-center text-white"
+    >
+      <img
+        src="images/about.jpg"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
 
-      <div class="about-card font-semibold bg-blue-200" data-aos="fade-up ">
-        <div class="card">✔ Trusted Service</div>
-        <div class="card">✔ Experienced Drivers</div>
-        <div class="card">✔ Wide Service Area</div>
+      <div class="absolute inset-0 bg-black/50"></div>
+
+      <div class="relative text-center">
+        <h1 class="text-4xl font-bold">About Fast Cab</h1>
+        <p class="mt-2">Safe • Reliable • Affordable Rides</p>
       </div>
-
-      <h2 class="font-semibold">Why Choose Us?</h2>
-      <ul class="why-list font-semibold">
-        <li>Safe & Secure Rides</li>
-        <li>On-Time Pickup</li>
-        <li>Affordable Pricing</li>
-        <li>24/7 Support</li>
-      </ul>
     </section>
 
-    <a href="tel:+923001234567" class="sticky-call">
+    <section
+      class="max-w-6xl mx-auto py-12 px-4 grid md:grid-cols-2 gap-10 items-center"
+    >
+      <div>
+        <h2 class="text-2xl font-bold mb-4">Who We Are</h2>
+
+        <p class="text-gray-700 mb-4">
+          Fast Cab is a trusted taxi service delivering comfortable rides.
+        </p>
+
+        <ul class="space-y-2 font-medium">
+          <li>✔ Trusted Service</li>
+          <li>✔ Experienced Drivers</li>
+          <li>✔ Wide Coverage</li>
+        </ul>
+      </div>
+
+      <img src="images/about2.jpg" class="rounded-xl shadow-lg" />
+    </section>
+
+    <!-- FEATURES -->
+    <section class="bg-gray-100 py-12">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-6 px-4">
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:scale-105 transition text-center"
+        >
+          <i class="fa-solid fa-shield-halved text-3xl text-yellow-500"></i>
+          <h3 class="font-bold mt-3">Safe Ride</h3>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:scale-105 transition text-center"
+        >
+          <i class="fa-solid fa-clock text-3xl text-yellow-500"></i>
+          <h3 class="font-bold mt-3">On Time</h3>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:scale-105 transition text-center"
+        >
+          <i class="fa-solid fa-wallet text-3xl text-yellow-500"></i>
+          <h3 class="font-bold mt-3">Affordable</h3>
+        </div>
+
+        <div
+          class="bg-white p-6 rounded-xl shadow hover:scale-105 transition text-center"
+        >
+          <i class="fa-solid fa-headset text-3xl text-yellow-500"></i>
+          <h3 class="font-bold mt-3">24/7 Support</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="bg-yellow-500 text-center py-12 text-white">
+      <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+        <div>
+          <h2 class="text-3xl font-bold">500+</h2>
+          <p>Happy Clients</p>
+        </div>
+
+        <div>
+          <h2 class="text-3xl font-bold">120+</h2>
+          <p>Drivers</p>
+        </div>
+
+        <div>
+          <h2 class="text-3xl font-bold">24/7</h2>
+          <p>Support</p>
+        </div>
+      </div>
+    </section>
+    <a href="tel:+926239662067" class="sticky-call">
       <i class="fa-solid fa-phone"></i> Call Now
     </a>
 
-    <footer>© 2026 Fast Cab. All Rights Reserved.</footer>
-    <script src="js/script.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <footer class="bg-gray-900 text-gray-300 pt-10 mt-12">
+      <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- About -->
+        <div>
+          <h3 class="text-xl font-bold text-yellow-500 mb-3">Fast Cab</h3>
+          <p class="text-sm leading-relaxed">
+            Reliable and affordable taxi service available 24/7. Book fast, ride
+            safe and reach your destination comfortably.
+          </p>
+
+          <div class="flex gap-4 mt-4 text-xl">
+            <a href="https://www.facebook.com" target="_blank">
+              <i
+                class="fa-brands fa-facebook hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <i
+                class="fa-brands fa-twitter hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i
+                class="fa-brands fa-instagram hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+            <a href="https://www.whatsapp.com" target="_blank">
+              <i
+                class="fa-brands fa-whatsapp hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-yellow-500">Home</a></li>
+            <li>
+              <a href="about.html" class="hover:text-yellow-500">About</a>
+            </li>
+            <li>
+              <a href="services.html" class="hover:text-yellow-500">Services</a>
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-yellow-500">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Our Services</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Local Rides</li>
+            <li>Airport Transfers</li>
+            <li>Outstation Trips</li>
+            <li>Corporate Travel</li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Contact</h4>
+
+          <p class="text-sm mb-2">
+            <i class="fa-solid fa-phone text-yellow-500 mr-2"></i>
+            +92 6239662067
+          </p>
+
+          <p class="text-sm mb-2">
+            <i class="fa-solid fa-envelope text-yellow-500 mr-2"></i>
+            cabsservice24@gmail.com
+          </p>
+
+          <p class="text-sm">
+            <i class="fa-solid fa-location-dot text-yellow-500 mr-2"></i>
+            Available 24/7 Service
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-700 mt-8 py-4 text-center text-sm">
+        © 2026 Fast Cab — All Rights Reserved
+      </div>
+    </footer>
+
     <script>
-      AOS.init({
-        duration: 900,
-        once: true,
-        easing: "ease-in-out",
+      document.getElementById("menuBtn").addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
       });
     </script>
   </body>

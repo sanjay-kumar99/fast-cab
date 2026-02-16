@@ -28,43 +28,299 @@
     </style>
   </head>
   <body>
-    <header class="top-header">
-      <div class="logo"><i class="fa-solid fa-taxi"></i> FAST CAB</div>
-      <div class="call">Call Us : +92 6239662067</div>
-    </header>
+    <nav class="bg-yellow-500 shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <!-- LEFT : Logo -->
+          <div class="flex items-center space-x-2">
+            <img src="images/logo.png" class="h-20 w-auto" />
+            <span class="font-bold text-xl text-red-600">Fast Cab</span>
+          </div>
 
-    <nav class="navbar">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="contact.html">Contact Us</a>
+          <!-- CENTER : Menu -->
+          <div
+            class="hidden md:flex space-x-8 font-medium font-semibold text-black ml-24"
+          >
+            <a href="index.html" class="hover:text-red-600 transition">Home</a>
+            <a href="about.html" class="hover:text-red-600 transition">About</a>
+            <a href="services.html" class="hover:text-red-600 transition"
+              >Services</a
+            >
+            <a href="contact.html" class="hover:text-red-600 transition"
+              >Contact</a
+            >
+          </div>
+
+          <!-- RIGHT : Contact -->
+          <div class="hidden md:flex items-center space-x-5 text-sm">
+            <span class="flex items-center gap-1">
+              <i class="fa-solid fa-phone text-red-600"></i>
+              +92 6239662067
+            </span>
+
+            <span class="flex items-center gap-1">
+              <i class="fa-solid fa-envelope text-red-600"></i>
+              cabsservice24@gmail.com
+            </span>
+          </div>
+
+          <!-- Mobile Button -->
+          <button id="menuBtn" class="md:hidden text-2xl">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden flex flex-col space-y-3 pb-4 font-medium"
+        >
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+
+          <hr />
+
+          <span>📞 +92 6239662067</span>
+          <span>📧 cabsservice24@gmail.com</span>
+        </div>
+      </div>
     </nav>
-    <section class="page-section">
-      <h1 class="bg-gray-300 font-bold text-center">Our Services</h1>
 
-      <div class="service-item " data-aos="zoom-in">
-        <div class="card">
-          <h3>Local Rides</h3>
-          <p>City travel at best prices.</p>
+    <section class="py-16 bg-gray-100 text-center">
+      <h2 class="text-3xl font-bold mb-12">
+        <span class="text-yellow-500">WELCOME</span>
+        <div class="w-20 h-1 bg-yellow-500 mx-auto mt-2"></div>
+        Our Services
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
+        <!-- CARD 1 -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition"
+        >
+          <img
+            src="images/local.webp"
+            class="w-full h-44 object-cover hover:scale-110 transition duration-500"
+          />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Local Rides</h3>
+            <p class="text-gray-600 mb-3">
+              Get reliable city-wide taxi rides at your doorstep anytime,
+              ensuring quick and safe travel within minutes.
+            </p>
+            <a
+              href="cars.html?type=local"
+              class="bg-yellow-500 text-white px-4 py-2 rounded-full"
+            >
+              Book Now
+            </a>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Airport Transfers</h3>
-          <p>On-time airport pickup & drop.</p>
+        <!-- CARD 2 -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition"
+        >
+          <img
+            src="images/airport.webp"
+            class="w-full h-44 object-cover hover:scale-110 transition duration-500"
+          />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Airport Transfer</h3>
+            <p class="text-gray-600 mb-3">
+              Enjoy stress-free airport pickups and drop-offs with punctual
+              drivers and spacious vehicles for your luggage.
+            </p>
+            <a
+              href="cars.html?type=airport"
+              class="bg-yellow-500 text-white px-4 py-2 rounded-full"
+            >
+              Book Now
+            </a>
+          </div>
         </div>
 
-        <div class="card">
-          <h3>Outstation Trips</h3>
-          <p>Comfortable long distance travel.</p>
+        <!-- CARD 3 -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition"
+        >
+          <img
+            src="images/trips.webp"
+            class="w-full h-44 object-cover hover:scale-110 transition duration-500"
+          />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Outstation Trips</h3>
+            <p class="text-gray-600 mb-3">
+              Travel conveniently to nearby cities and destinations with
+              affordable outstation taxi booking options.
+            </p>
+            <a
+              href="cars.html?type=outstation"
+              class="bg-yellow-500 text-white px-4 py-2 rounded-full"
+            >
+              Book Now
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition"
+        >
+          <img
+            src="images/rental.webp"
+            class="w-full h-44 object-cover hover:scale-110 transition duration-500"
+          />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Hourly Rental</h3>
+            <p class="text-gray-600 mb-3">
+              Book a cab for multiple stops and extended usage. Ideal for
+              business trips, events, and flexible city travel.
+            </p>
+            <a
+              href="cars.html"
+              class="bg-yellow-500 text-white px-4 py-2 rounded-full"
+            >
+              Book Now
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition"
+        >
+          <img
+            src="images/corporate.jpg"
+            class="w-full h-44 object-cover hover:scale-110 transition duration-500"
+          />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Corporate Travel</h3>
+            <p class="text-gray-600 mb-3">
+              Professional and punctual taxi services for business meetings,
+              client pickups, and office travel solutions.
+            </p>
+            <a
+              href="cars.html"
+              class="bg-yellow-500 text-white px-4 py-2 rounded-full"
+            >
+              Book Now
+            </a>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div
+          class="bg-white rounded-xl overflow-hidden shadow hover:shadow-2xl transition"
+        >
+          <img
+            src="images/tour.gif"
+            class="w-full h-44 object-cover hover:scale-110 transition duration-500"
+          />
+          <div class="p-6">
+            <h3 class="font-bold text-xl mb-2">Tour Packages</h3>
+            <p class="text-gray-600 mb-3">
+              Discover new places with safe and reliable travel options. Perfect
+              for family trips, sightseeing, and vacations.
+            </p>
+            <a
+              href="cars.html"
+              class="bg-yellow-500 text-white px-4 py-2 rounded-full"
+            >
+              Book Now
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
-    <a href="tel:+923001234567" class="sticky-call">
+    <a href="tel:+926239662067" class="sticky-call">
       <i class="fa-solid fa-phone"></i> Call Now
     </a>
 
-    <footer>© 2026 Fast Cab. All Rights Reserved.</footer>
+    <footer class="bg-gray-900 text-gray-300 pt-10 mt-12">
+      <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- About -->
+        <div>
+          <h3 class="text-xl font-bold text-yellow-500 mb-3">Fast Cab</h3>
+          <p class="text-sm leading-relaxed">
+            Reliable and affordable taxi service available 24/7. Book fast, ride
+            safe and reach your destination comfortably.
+          </p>
+
+          <div class="flex gap-4 mt-4 text-xl">
+           <a href="https://www.facebook.com" target="_blank">
+              <i class="fa-brands fa-facebook hover:text-yellow-500 cursor-pointer"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <i class="fa-brands fa-twitter hover:text-yellow-500 cursor-pointer"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i class="fa-brands fa-instagram hover:text-yellow-500 cursor-pointer"></i>
+            </a>
+            <a href="https://www.whatsapp.com" target="_blank">
+              <i class="fa-brands fa-whatsapp hover:text-yellow-500 cursor-pointer"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-yellow-500">Home</a></li>
+            <li>
+              <a href="about.html" class="hover:text-yellow-500">About</a>
+            </li>
+            <li>
+              <a href="services.html" class="hover:text-yellow-500">Services</a>
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-yellow-500">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Our Services</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Local Rides</li>
+            <li>Airport Transfers</li>
+            <li>Outstation Trips</li>
+            <li>Corporate Travel</li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Contact</h4>
+
+          <p class="text-sm mb-2">
+            <i class="fa-solid fa-phone text-yellow-500 mr-2"></i>
+            +92 6239662067
+          </p>
+
+          <p class="text-sm mb-2">
+            <i class="fa-solid fa-envelope text-yellow-500 mr-2"></i>
+            cabsservice24@gmail.com
+          </p>
+
+          <p class="text-sm">
+            <i class="fa-solid fa-location-dot text-yellow-500 mr-2"></i>
+            Available 24/7 Service
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-700 mt-8 py-4 text-center text-sm">
+        © 2026 Fast Cab — All Rights Reserved
+      </div>
+    </footer>
+
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

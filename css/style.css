@@ -17,67 +17,111 @@ body {
   color: #222;
 }
 
-/* =====================
-   TOP HEADER
-===================== */
-.top-header {
-  background: #ffc107;
+/* LOGO CONTAINER */
+.logo {
   display: flex;
-  justify-content: space-between;
-  padding: 12px 40px;
+  align-items: center;
+}
+
+/* LOGO IMAGE */
+.logo img {
+  height: 45px; /* navbar ke hisab se */
+  width: auto; /* ratio maintain */
+  object-fit: contain;
+}
+
+/* CALL TEXT */
+.call {
+  color: #0c0b0b;
+  font-size: 18px;
+}
+@media (max-width: 768px) {
+  .top-header {
+    height: 60px;
+    padding: 8px 15px;
+  }
+
+  .logo img {
+    height: 38px;
+  }
+
+  .call {
+    font-size: 12px;
+  }
+}
+footer a {
+  color: #ffc107;
+  text-decoration: none;
+}
+
+.contact-info {
+  display: flex;
+  gap: 20px;
   font-weight: 600;
 }
 
-.logo {
-  font-size: 22px;
-}
-
-.call {
-  font-size: 16px;
-}
-
-/* =====================
-   NAVBAR
-===================== */
-.navbar {
-  background: #111;
-  display: flex;
-  justify-content: center;
-}
-
-.navbar a {
-  color: #fff;
-  padding: 14px 22px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.navbar a:hover,
-.navbar a.active {
-  background: #ffc107;
+.email a {
   color: #000;
+  text-decoration: none;
+}
+
+.email a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+  }
 }
 
 /* =====================
    BANNER
 ===================== */
-.banner {
-  height: 420px;
-}
-.bg-video {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  min-width: 100%;
+/* .banner {
+  position: relative;
+  height: 70vh;
+  overflow: hidden;
+} */
 
-  transform: translate(-50%, -50%);
+/* .banner video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: -1;
+} */
+
+/* When loaded */
+.bg-video.loaded {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* Slow Zoom Animation */
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.animate-slowZoom {
+  animation: slowZoom 18s linear infinite alternate;
 }
 
 .banner-content {
-  color: #fff;
-  animation: slideLeft 1s ease;
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 35%;
 }
 
 .banner h1 {
@@ -410,10 +454,11 @@ footer {
   margin-right: 8px;
 }
 
-@media(max-width:768px){
-  .contact-map iframe { height: 220px; }
+@media (max-width: 768px) {
+  .contact-map iframe {
+    height: 220px;
+  }
 }
-
 
 /* =====================
    ANIMATIONS EXTRA
@@ -503,11 +548,39 @@ body {
 }
 
 .car-card {
-  background:white;
+  background: white;
   padding: 20px;
-  border-radius: 15px;
+  border-radius: 18px;
   text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.35s;
+}
+
+.car-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.car-card img {
   transition: 0.4s;
+}
+
+.car-card:hover img {
+  transform: scale(1.1);
+}
+
+.book-btn {
+  margin-top: 12px;
+  background: #16a34a;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.book-btn:hover {
+  background: #15803d;
 }
 
 .car-card:hover {
@@ -524,10 +597,17 @@ body {
 }
 
 .filter-btn {
-  padding: 10px 20px;
-  border-radius: 20px;
   background: white;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.filter-btn:hover {
+  background: #facc15;
+  transform: translateY(-2px);
 }
 
 @keyframes slide {
@@ -541,17 +621,17 @@ body {
   }
 }
 
-.animate-scaleIn {
-  animation: scaleIn 0.3s ease;
-}
-
 @keyframes scaleIn {
   from {
-    transform: scale(0.7);
+    transform: scale(0.8);
     opacity: 0;
   }
   to {
     transform: scale(1);
     opacity: 1;
   }
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.25s ease;
 }

@@ -1,123 +1,282 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Contact Us | Fast Cab</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Us | Fast Cab</title>
 
-  <!-- Main CSS -->
-  <link rel="stylesheet" href="css/style.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    body { font-family: 'Poppins', sans-serif; }
-  </style>
-</head>
-<body>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="bg-yellow-500 shadow-md sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-center justify-between h-16">
+          <!-- LEFT : Logo -->
+          <div class="flex items-center space-x-2">
+            <img src="images/logo.png" class="h-20 w-auto" />
+            <span class="font-bold text-xl text-red-600">Fast Cab</span>
+          </div>
 
-<!-- ================= TOP HEADER ================= -->
-<div class="top-header">
-  <div><i class="fa-solid fa-taxi"></i> FAST CAB</div>
-  <div>Call Us : <a href="tel:+926239662067">+92 6239662067</a></div>
-</div>
+          <!-- CENTER : Menu -->
+          <div
+            class="hidden md:flex space-x-8 font-medium font-semibold text-black ml-24"
+          >
+            <a href="index.html" class="hover:text-red-600 transition">Home</a>
+            <a href="about.html" class="hover:text-red-600 transition">About</a>
+            <a href="services.html" class="hover:text-red-600 transition"
+              >Services</a
+            >
+            <a href="contact.html" class="hover:text-red-600 transition"
+              >Contact</a
+            >
+          </div>
 
-<!-- ================= NAVBAR ================= -->
-<div class="navbar">
-  <a href="index.html">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="services.html">Services</a>
-  <a href="contact.html" class="active">Contact Us</a>
-</div>
+          <!-- RIGHT : Contact -->
+          <div class="hidden md:flex items-center space-x-5 text-sm">
+            <span class="flex items-center gap-1">
+              <i class="fa-solid fa-phone text-red-600"></i>
+              +92 6239662067
+            </span>
 
-<!-- ================= CONTACT SECTION ================= -->
-<section class="contact-page py-12 px-4">
+            <span class="flex items-center gap-1">
+              <i class="fa-solid fa-envelope text-red-600"></i>
+              cabsservice24@gmail.com
+            </span>
+          </div>
 
-  <h1 class="text-3xl font-bold text-center mb-3">Contact Us</h1>
+          <!-- Mobile Button -->
+          <button id="menuBtn" class="md:hidden text-2xl">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
 
-  <p class="contact-text text-center max-w-2xl mx-auto mb-10">
-    If you have any questions or reliable welcome, send a mail and we will
-    pickup you to stop as soon.
-  </p>
+        <!-- Mobile Menu -->
+        <div
+          id="mobileMenu"
+          class="hidden md:hidden flex flex-col space-y-3 pb-4 font-medium"
+        >
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
 
-  <!-- GRID -->
-  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          <hr />
 
-    <!-- LEFT -->
-    <div data-aos="fade-right">
+          <span>📞 +92 6239662067</span>
+          <span>📧 cabsservice24@gmail.com</span>
+        </div>
+      </div>
+    </nav>
 
-      <div class="contact-map mb-5">
+    <!-- ================= CONTACT SECTION ================= -->
+    <section class="contact-page py-12 px-4">
+      <h1 class="text-3xl font-bold text-center mb-3">Contact Us</h1>
+
+      <p class="contact-text text-center max-w-2xl mx-auto mb-10">
+        If you have any questions or reliable welcome, send a mail and we will
+        pickup you to stop as soon.
+      </p>
+
+      <!-- GRID -->
+      <div
+        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
+      >
+        <!-- LEFT : IMAGE -->
+        <div data-aos="fade-right" class="w-full">
+          <img
+            src="images/app.png"
+            class="w-full h-auto rounded-xl shadow-none object-cover block border-0 outline-none"
+          />
+
+          <div class="contact-buttons flex flex-col sm:flex-row gap-4 mt-5">
+            <a href="tel:+926239662067" class="btn yellow">
+              <i class="fa-solid fa-phone"></i> Call Now
+            </a>
+
+            <a
+              href="https://wa.me/926239662067"
+              target="_blank"
+              class="btn whatsapp"
+            >
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT : FORM -->
+        <div data-aos="fade-left">
+          <form
+            id="contactForm"
+            class="contact-form relative overflow-hidden rounded-xl text-white"
+            style="background: url(images/bg.webp) center/cover no-repeat"
+          >
+            <div class="absolute inset-0 bg-black/60"></div>
+
+            <div class="relative z-10 p-6 space-y-4">
+              <input type="text" id="name" placeholder="Your Name" />
+              <input type="email" id="email" placeholder="Your Email" />
+              <input type="text" id="phone" placeholder="Phone Number" />
+              <textarea id="message" placeholder="Your Message"></textarea>
+
+              <button type="submit" class="btn yellow w-full">
+                Send Message
+              </button>
+            </div>
+          </form>
+
+          <p id="formMsg"></p>
+
+          <div class="follow-us mt-6">
+            <p>Follow Us :</p>
+            <div class="social-icons mt-2">
+              <a href="https://www.facebook.com/fastcab24" target="_blank"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="https://twitter.com/fastcab24" target="_blank"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+              <a href="https://www.instagram.com/fastcab24" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://wa.me/926239662067" target="_blank"
+                ><i class="fa-brands fa-whatsapp"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= MAP AT BOTTOM ================= -->
+    <section class="px-4 pb-12">
+      <div class="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-lg">
         <iframe
           src="https://www.google.com/maps?q=FAST%20CAB%20Taxi%20Service&t=&z=14&ie=UTF8&iwloc=&output=embed"
-          allowfullscreen>
+          class="w-full h-[350px] border-0"
+          allowfullscreen
+        >
         </iframe>
       </div>
+    </section>
 
-      <div class="contact-buttons flex flex-col sm:flex-row gap-4">
-        <a href="tel:+926239662067" class="btn yellow">
-          <i class="fa-solid fa-phone"></i> Call Now
-        </a>
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-gray-900 text-gray-300 pt-10 mt-12">
+      <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- About -->
+        <div>
+          <h3 class="text-xl font-bold text-yellow-500 mb-3">Fast Cab</h3>
+          <p class="text-sm leading-relaxed">
+            Reliable and affordable taxi service available 24/7. Book fast, ride
+            safe and reach your destination comfortably.
+          </p>
 
-        <a href="https://wa.me/926239662067" target="_blank" class="btn whatsapp">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
-        </a>
-      </div>
+          <div class="flex gap-4 mt-4 text-xl">
+            <a href="https://www.facebook.com" target="_blank">
+              <i
+                class="fa-brands fa-facebook hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <i
+                class="fa-brands fa-twitter hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i
+                class="fa-brands fa-instagram hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+            <a href="https://www.whatsapp.com" target="_blank">
+              <i
+                class="fa-brands fa-whatsapp hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+          </div>
+        </div>
 
-    </div>
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-yellow-500">Home</a></li>
+            <li>
+              <a href="about.html" class="hover:text-yellow-500">About</a>
+            </li>
+            <li>
+              <a href="services.html" class="hover:text-yellow-500">Services</a>
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-yellow-500">Contact</a>
+            </li>
+          </ul>
+        </div>
 
-    <!-- RIGHT -->
-    <div data-aos="fade-left">
+        <!-- Services -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Our Services</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Local Rides</li>
+            <li>Airport Transfers</li>
+            <li>Outstation Trips</li>
+            <li>Corporate Travel</li>
+          </ul>
+        </div>
 
-      <form id="contactForm" class="contact-form bg-gray-300">
-        <input type="text" id="name" placeholder="Your Name">
-        <input type="email" id="email" placeholder="Your Email">
-        <input type="text" id="phone" placeholder="Phone Number">
-        <textarea id="message" placeholder="Your Message"></textarea>
-        <button type="submit" class="btn yellow w-full">Send Message</button>
-      </form>
+        <!-- Contact -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Contact</h4>
 
-      <p id="formMsg"></p>
+          <p class="text-sm mb-2">
+            <i class="fa-solid fa-phone text-yellow-500 mr-2"></i>
+            +92 6239662067
+          </p>
 
-      <div class="follow-us mt-6">
-        <p>Follow Us :</p>
-        <div class="social-icons mt-2">
-          <i class="fa-brands fa-facebook-f"></i>
-          <i class="fa-brands fa-twitter"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-whatsapp"></i>
+          <p class="text-sm mb-2">
+            <i class="fa-solid fa-envelope text-yellow-500 mr-2"></i>
+            cabsservice24@gmail.com
+          </p>
+
+          <p class="text-sm">
+            <i class="fa-solid fa-location-dot text-yellow-500 mr-2"></i>
+            Available 24/7 Service
+          </p>
         </div>
       </div>
 
-    </div>
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-700 mt-8 py-4 text-center text-sm">
+        © 2026 Fast Cab — All Rights Reserved
+      </div>
+    </footer>
 
-  </div>
-
-  <!-- MOBILE STICKY -->
-  <a href="tel:+926239662067" class="sticky-call">
-    <i class="fa-solid fa-phone"></i> Call Now
-  </a>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  © 2026 Fast Cab | All Rights Reserved
-</footer>
-
-<script src="js/script.js"></script>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 900, once: true });
-</script>
-
-</body>
+    <script src="js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 900, once: true });
+    </script>
+  </body>
 </html>

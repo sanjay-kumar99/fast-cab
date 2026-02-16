@@ -6,17 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body class="bg-gray-100">
     <!-- HEADER -->
-    <div class="bg-yellow-400 p-4 text-center font-bold text-xl">
-      Choose Your Perfect Ride
+    <div
+      class="bg-gradient-to-r from-yellow-400 to-orange-500 p-5 text-center shadow-lg"
+    >
+      <button
+        onclick="history.back()"
+        class="flex items-center gap-2 bg-white/80 backdrop-blur px-4 py-2 rounded-xl font-semibold shadow-md hover:scale-105 hover:bg-white transition duration-200"
+      >
+        <span class="text-lg">⬅</span>
+        Back
+      </button>
+
+      <h1 class="text-2xl font-bold text-dark md:text-3xl tracking-wide">
+        Choose Your Perfect Ride
+      </h1>
     </div>
 
     <!-- FILTER -->
-    <div class="flex justify-center gap-4 mt-6">
+    <div class="flex justify-center gap-4 mt-8">
       <button onclick="filterCars('all')" class="filter-btn">All</button>
       <button onclick="filterCars('5')" class="filter-btn">5-Seater</button>
       <button onclick="filterCars('7')" class="filter-btn">7-Seater</button>
@@ -24,41 +41,187 @@
 
     <!-- CARS -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-      <div class="car-card" data-seat="7">
-        <img src="images/Ertiga.jpeg" class="w-40 mx-auto" />
-        <h3 class="font-bold text-lg">Maruti Ertiga (7 Seater)</h3>
-        <p>₹16 / km • AC • Spacious</p>
-        <button onclick="openBooking()" class="book-btn">Select & Book</button>
+      <!-- Ertiga -->
+      <div
+        class="car-card max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300"
+        data-seat="7"
+      >
+        <img
+          src="images/Ertiga.jpeg"
+          alt="Maruti Ertiga"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-gray-800">
+            Maruti Ertiga (7 Seater)
+          </h3>
+          <p class="text-sm text-gray-600 mt-2">₹22 / km • AC • Spacious</p>
+          <button
+            onclick="openBooking()"
+            class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
+          >
+            BOOK NOW
+          </button>
+        </div>
       </div>
 
-      <div class="car-card" data-seat="5">
-        <img src="images/Swift.jpeg" class="w-40 mx-auto" />
-        <h3 class="font-bold text-lg">Swift Dzire (5 Seater)</h3>
-        <p>₹15 / km • AC • Comfortable</p>
-        <button onclick="openBooking()" class="book-btn">Select & Book</button>
+      <!-- Swift Dzire -->
+      <div
+        class="car-card max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300"
+        data-seat="5"
+      >
+        <img
+          src="images/Swift.jpeg"
+          alt="Swift Dzire"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-gray-800">
+            Swift Dzire (5 Seater)
+          </h3>
+          <p class="text-sm text-gray-600 mt-2">₹15 / km • AC • Comfortable</p>
+          <button
+            onclick="openBooking()"
+            class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
+          >
+            BOOK NOW
+          </button>
+        </div>
       </div>
 
-      <div class="car-card" data-seat="5">
-        <img src="images/AURA.jpeg" class="w-40 mx-auto" />
-        <h3 class="font-bold text-lg">Celerio</h3>
-        <p>Budget Friendly</p>
-        <button onclick="openBooking()" class="book-btn">Select & Book</button>
+      <!-- Celerio -->
+      <div
+        class="car-card max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300"
+        data-seat="5"
+      >
+        <img
+          src="images/celerio.jpeg"
+          alt="Celerio"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-gray-800">Celerio (5 Seater)</h3>
+          <p class="text-sm text-gray-600 mt-2">
+            ₹15 / km • AC •Budget Friendly
+          </p>
+          <button
+            onclick="openBooking()"
+            class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
+          >
+            BOOK NOW
+          </button>
+        </div>
       </div>
 
-      <div class="car-card" data-seat="7">
-        <img src="images/Kia.jpeg" class="w-40 mx-auto" />
-        <h3 class="font-bold text-lg">Toyota Rumion</h3>
-        <p>Premium Comfort</p>
-        <button onclick="openBooking()" class="book-btn">Select & Book</button>
+      <!-- Wagonar -->
+      <div
+        class="car-card max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300"
+        data-seat="5"
+      >
+        <img
+          src="images/Wagonar.jpeg"
+          alt="Wagonar"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-gray-800">
+            Maruti Wagonar (5 Seater)
+          </h3>
+          <p class="text-sm text-gray-600 mt-2">
+            ₹12 / km • AC • Budget Friendly
+          </p>
+          <button
+            onclick="openBooking()"
+            class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
+          >
+            BOOK NOW
+          </button>
+        </div>
+      </div>
+
+      <!-- Hyundai Aura -->
+      <div
+        class="car-card max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300"
+        data-seat="5"
+      >
+        <img
+          src="images/Hyundai.jpeg"
+          alt="Hyundai Aura"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-gray-800">
+            Hyundai Aura (5 Seater)
+          </h3>
+          <p class="text-sm text-gray-600 mt-2">
+            ₹18 / km • AC • Budget Friendly
+          </p>
+          <button
+            onclick="openBooking()"
+            class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
+          >
+            BOOK NOW
+          </button>
+        </div>
+      </div>
+
+      <!-- Kia Carens -->
+      <div
+        class="car-card max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300"
+        data-seat="7"
+      >
+        <img
+          src="images/Kia.jpeg"
+          alt="Kia Carens"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-gray-800">Kia Carens (7 Seater)</h3>
+          <p class="text-sm text-gray-600 mt-2">
+            ₹15 / km • AC • Budget Friendly
+          </p>
+          <button
+            onclick="openBooking()"
+            class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
+          >
+            BOOK NOW
+          </button>
+        </div>
+      </div>
+
+      <!-- Toyota Rumion -->
+      <div
+        class="car-card max-w-sm bg-white rounded-2xl shadow-xl overflow-hidden hover:scale-105 transition duration-300"
+        data-seat="7"
+      >
+        <img
+          src="images/toyoto.jpeg"
+          alt="Toyota Rumion"
+          class="w-full h-48 object-cover"
+        />
+        <div class="p-5">
+          <h3 class="text-xl font-bold text-gray-800">
+            Toyota Rumion (7 Seater)
+          </h3>
+          <p class="text-sm text-gray-600 mt-2">
+            ₹25 / km • AC • Premium Comfort
+          </p>
+          <button
+            onclick="openBooking()"
+            class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
+          >
+            BOOK NOW
+          </button>
+        </div>
       </div>
     </div>
 
     <!-- BOOKING MODAL -->
     <div
       id="bookingModal"
-      class="fixed inset-0 bg-black/60 hidden flex items-center justify-center"
+      class="fixed inset-0 backdrop-blur-sm bg-black/40 hidden flex items-center justify-center"
     >
-      <div class="bg-white p-6 rounded-xl w-[90%] max-w-md">
+      <div class="bg-white p-7 rounded-2xl max-w-md shadow-2xl animate-scaleIn">
         <h2 class="text-xl font-bold mb-3">Book Your Ride</h2>
 
         <input
@@ -103,9 +266,101 @@
         </button>
       </div>
     </div>
+    <footer class="bg-gray-900 text-gray-300 pt-10 mt-12">
+      <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <!-- About -->
+        <div>
+          <h3 class="text-xl font-bold text-yellow-500 mb-3">Fast Cab</h3>
+          <p class="text-sm leading-relaxed">
+            Reliable and affordable taxi service available 24/7. Book fast, ride
+            safe and reach your destination comfortably.
+          </p>
+
+          <div class="flex gap-4 mt-4 text-xl">
+            <a href="https://www.facebook.com" target="_blank">
+              <i
+                class="fa-brands fa-facebook hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <i
+                class="fa-brands fa-twitter hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <i
+                class="fa-brands fa-instagram hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+            <a href="https://www.whatsapp.com" target="_blank">
+              <i
+                class="fa-brands fa-whatsapp hover:text-yellow-500 cursor-pointer"
+              ></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-yellow-500">Home</a></li>
+            <li>
+              <a href="about.html" class="hover:text-yellow-500">About</a>
+            </li>
+            <li>
+              <a href="services.html" class="hover:text-yellow-500">Services</a>
+            </li>
+            <li>
+              <a href="contact.html" class="hover:text-yellow-500">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Our Services</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Local Rides</li>
+            <li>Airport Transfers</li>
+            <li>Outstation Trips</li>
+            <li>Corporate Travel</li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-lg font-semibold text-white mb-3">Contact</h4>
+
+          <p class="text-sm mb-2">
+            <i class="fa-solid fa-phone text-yellow-500 mr-2"></i>
+            +92 6239662067
+          </p>
+
+          <p class="text-sm mb-2">
+            <i class="fa-solid fa-envelope text-yellow-500 mr-2"></i>
+            cabsservice24@gmail.com
+          </p>
+
+          <p class="text-sm">
+            <i class="fa-solid fa-location-dot text-yellow-500 mr-2"></i>
+            Available 24/7 Service
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="border-t border-gray-700 mt-8 py-4 text-center text-sm">
+        © 2026 Fast Cab — All Rights Reserved
+      </div>
+    </footer>
 
     <!-- JS -->
     <script>
+      // ===== URL BASED AUTO FILTER (From Home Page) =====
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get("type");
+
       function filterCars(seat) {
         document.querySelectorAll(".car-card").forEach((card) => {
           card.style.display =
@@ -113,6 +368,14 @@
         });
       }
 
+      // Auto apply filter when page loads
+      window.addEventListener("DOMContentLoaded", () => {
+        if (type === "local") filterCars("5");
+        else if (type === "airport") filterCars("7");
+        else if (type === "outstation") filterCars("all");
+      });
+
+      // ===== MODAL FUNCTIONS =====
       function openBooking() {
         document.getElementById("bookingModal").classList.remove("hidden");
       }
