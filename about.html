@@ -146,21 +146,44 @@
     <section class="bg-yellow-500 text-center py-12 text-white">
       <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
         <div>
-          <h2 class="text-3xl font-bold">500+</h2>
+          <h2 class="text-3xl font-bold counter" data-target="500">0</h2>
           <p>Happy Clients</p>
         </div>
 
         <div>
-          <h2 class="text-3xl font-bold">120+</h2>
+          <h2 class="text-3xl font-bold counter" data-target="120">0</h2>
           <p>Drivers</p>
         </div>
 
         <div>
-          <h2 class="text-3xl font-bold">24/7</h2>
+          <h2 class="text-3xl font-bold counter" data-target="24">0</h2>
           <p>Support</p>
         </div>
       </div>
     </section>
+
+    <script>
+      const counters = document.querySelectorAll(".counter");
+      const speed = 200; // lower = faster
+
+      counters.forEach((counter) => {
+        const updateCount = () => {
+          const target = +counter.getAttribute("data-target");
+          const count = +counter.innerText;
+          const increment = target / speed;
+
+          if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 20);
+          } else {
+            counter.innerText =
+              target + (counter.dataset.target === "24" ? "/7" : "+");
+          }
+        };
+
+        updateCount();
+      });
+    </script>
     <a href="tel:+926239662067" class="sticky-call">
       <i class="fa-solid fa-phone"></i> Call Now
     </a>
