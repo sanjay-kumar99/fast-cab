@@ -1,9 +1,9 @@
-fetch("http://localhost:5000/api/bookings")
-  .then(res => res.json())
-  .then(data => {
+fetch("https://fast-cab.onrender.com/api/bookings")
+  .then((res) => res.json())
+  .then((data) => {
     const table = document.getElementById("bookingTable");
 
-    data.forEach(booking => {
+    data.forEach((booking) => {
       const row = document.createElement("tr");
 
       row.innerHTML = `
@@ -18,6 +18,6 @@ fetch("http://localhost:5000/api/bookings")
       table.appendChild(row);
     });
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Error loading bookings", err);
   });

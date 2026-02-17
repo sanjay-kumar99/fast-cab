@@ -230,11 +230,14 @@
         };
 
         try {
-          const response = await fetch("http://localhost:5000/api/book", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(bookingData),
-          });
+          const response = await fetch(
+            "https://fast-cab.onrender.com/api/book",
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(bookingData),
+            },
+          );
 
           const data = await response.json();
 
@@ -372,7 +375,7 @@
 
     <script>
       function submitHomeBooking() {
-        fetch("http://localhost:5000/api/book", {
+        fetch("https://fast-cab.onrender.com/api/book", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
