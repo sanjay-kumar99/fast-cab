@@ -2,24 +2,21 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us | Fast Cab</title>
 
-    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css" />
-
-    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- AOS -->
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    <!-- Font -->
+    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
@@ -31,7 +28,9 @@
       }
     </style>
   </head>
+
   <body>
+    <!-- ================= NAVBAR ================= -->
     <nav class="bg-yellow-500 shadow-md sticky top-0 z-50">
       <div class="max-w-7xl mx-auto px-4">
         <div class="flex items-center justify-between h-16">
@@ -43,7 +42,7 @@
 
           <!-- CENTER : Menu -->
           <div
-            class="hidden md:flex space-x-8 font-medium font-semibold text-black ml-24"
+            class="hidden md:flex space-x-8 font-medium font-semibold text-black"
           >
             <a href="index.html" class="hover:text-red-600 transition">Home</a>
             <a href="about.html" class="hover:text-red-600 transition">About</a>
@@ -93,97 +92,103 @@
     </nav>
 
     <!-- ================= CONTACT SECTION ================= -->
-    <section class="contact-page py-12 px-4">
+    <section class="py-12 px-4">
       <h1 class="text-3xl font-bold text-center mb-3">Contact Us</h1>
 
-      <p class="contact-text text-center max-w-2xl mx-auto mb-10">
-        If you have any questions or reliable welcome, send a mail and we will
-        pickup you to stop as soon.
+      <p class="text-center max-w-2xl mx-auto mb-10">
+        Have any questions? Send us a message and we’ll respond quickly.
       </p>
 
-      <!-- GRID -->
-      <div
-        class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
-      >
-        <!-- LEFT : IMAGE -->
-        <div data-aos="fade-right" class="w-full">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- LEFT -->
+        <div data-aos="fade-right">
           <img
             src="images/app.png"
-            class="w-full h-auto rounded-xl shadow-none object-cover block border-0 outline-none"
+            class="w-full max-h-[420px] object-cover rounded-xl shadow"
           />
 
-          <div class="contact-buttons flex flex-col sm:flex-row gap-4 mt-5">
-            <a href="tel:+926239662067" class="btn yellow">
+          <div class="flex flex-col sm:flex-row gap-4 mt-5 w-full">
+            <a
+              href="tel:+926239662067"
+              class="w-full sm:w-auto text-center bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold"
+            >
               <i class="fa-solid fa-phone"></i> Call Now
             </a>
 
             <a
               href="https://wa.me/926239662067"
-              target="_blank"
-              class="btn whatsapp"
+              class="w-full sm:w-auto text-center bg-green-500 text-white px-6 py-3 rounded-lg font-semibold"
             >
               <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
             </a>
           </div>
         </div>
 
-        <!-- RIGHT : FORM -->
+        <!-- RIGHT FORM -->
         <div data-aos="fade-left">
           <form
-            id="contactForm"
-            class="contact-form relative overflow-hidden rounded-xl text-dark"
+            class="relative rounded-xl overflow-hidden"
             style="background: url(images/bg.webp) center/cover no-repeat"
           >
             <div class="absolute inset-0 bg-black/60"></div>
 
-            <div class="relative z-10 p-6 space-y-4 ">
-              <input type="text" id="name" placeholder="Your Name" />
-              <input type="email" id="email" placeholder="Your Email" />
-              <input type="text" id="phone" placeholder="Phone Number" />
-              <textarea id="message" placeholder="Your Message"></textarea>
+            <div class="relative z-10 p-6 space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                class="w-full p-3 rounded bg-white/90 outline-none"
+              />
 
-              <button type="submit" class="btn yellow w-full">
+              <input
+                type="email"
+                placeholder="Your Email"
+                class="w-full p-3 rounded bg-white/90 outline-none"
+              />
+
+              <input
+                type="text"
+                placeholder="Phone Number"
+                class="w-full p-3 rounded bg-white/90 outline-none"
+              />
+
+              <textarea
+                placeholder="Your Message"
+                class="w-full p-3 rounded bg-white/90 outline-none h-28"
+              ></textarea>
+
+              <button
+                class="w-full bg-yellow-500 text-white py-3 rounded-lg font-semibold"
+              >
                 Send Message
               </button>
             </div>
           </form>
 
-          <p id="formMsg"></p>
-
-          <div class="follow-us mt-6">
-            <p>Follow Us :</p>
-            <div class="social-icons mt-2">
-              <a href="https://www.facebook.com/fastcab24" target="_blank"
-                ><i class="fa-brands fa-facebook-f"></i
-              ></a>
-              <a href="https://twitter.com/fastcab24" target="_blank"
-                ><i class="fa-brands fa-twitter"></i
-              ></a>
-              <a href="https://www.instagram.com/fastcab24" target="_blank"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a href="https://wa.me/926239662067" target="_blank"
-                ><i class="fa-brands fa-whatsapp"></i
-              ></a>
+          <!-- Social -->
+          <div class="mt-6">
+            <p class="font-semibold">Follow Us :</p>
+            <div class="flex gap-4 mt-2 text-xl">
+              <i class="fa-brands fa-facebook"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-instagram"></i>
+              <i class="fa-brands fa-whatsapp"></i>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= MAP AT BOTTOM ================= -->
+    <!-- ================= MAP ================= -->
     <section class="px-4 pb-12">
       <div class="max-w-6xl mx-auto rounded-xl overflow-hidden shadow-lg">
         <iframe
-          src="https://www.google.com/maps?q=FAST%20CAB%20Taxi%20Service&t=&z=14&ie=UTF8&iwloc=&output=embed"
+          src="https://www.google.com/maps?q=FAST%20CAB%20Taxi%20Service&output=embed"
           class="w-full h-[350px] border-0"
-          allowfullscreen
         >
         </iframe>
       </div>
     </section>
 
-    <!-- ================= FOOTER ================= -->
     <footer class="bg-gray-900 text-gray-300 pt-10 mt-12">
       <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- About -->
@@ -217,6 +222,12 @@
             </a>
           </div>
         </div>
+        <!-- Toggle Script -->
+        <script>
+          document.getElementById("menuBtn").addEventListener("click", () => {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+          });
+        </script>
 
         <!-- Quick Links -->
         <div>
@@ -272,7 +283,6 @@
         © 2026 Fast Cab — All Rights Reserved
       </div>
     </footer>
-
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

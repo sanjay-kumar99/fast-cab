@@ -39,7 +39,7 @@
 
           <!-- CENTER : Menu -->
           <div
-            class="hidden md:flex space-x-8 font-medium font-semibold text-black ml-24"
+            class="hidden md:flex space-x-8 font-medium font-semibold text-black"
           >
             <a href="index.html" class="hover:text-red-600 transition">Home</a>
             <a href="about.html" class="hover:text-red-600 transition">About</a>
@@ -235,6 +235,12 @@
         </div>
       </div>
     </section>
+    <!-- Toggle Script -->
+    <script>
+      document.getElementById("menuBtn").addEventListener("click", () => {
+        document.getElementById("mobileMenu").classList.toggle("hidden");
+      });
+    </script>
 
     <a href="tel:+926239662067" class="sticky-call">
       <i class="fa-solid fa-phone"></i> Call Now
@@ -251,17 +257,25 @@
           </p>
 
           <div class="flex gap-4 mt-4 text-xl">
-           <a href="https://www.facebook.com" target="_blank">
-              <i class="fa-brands fa-facebook hover:text-yellow-500 cursor-pointer"></i>
+            <a href="https://www.facebook.com" target="_blank">
+              <i
+                class="fa-brands fa-facebook hover:text-yellow-500 cursor-pointer"
+              ></i>
             </a>
             <a href="https://www.twitter.com" target="_blank">
-              <i class="fa-brands fa-twitter hover:text-yellow-500 cursor-pointer"></i>
+              <i
+                class="fa-brands fa-twitter hover:text-yellow-500 cursor-pointer"
+              ></i>
             </a>
             <a href="https://www.instagram.com" target="_blank">
-              <i class="fa-brands fa-instagram hover:text-yellow-500 cursor-pointer"></i>
+              <i
+                class="fa-brands fa-instagram hover:text-yellow-500 cursor-pointer"
+              ></i>
             </a>
             <a href="https://www.whatsapp.com" target="_blank">
-              <i class="fa-brands fa-whatsapp hover:text-yellow-500 cursor-pointer"></i>
+              <i
+                class="fa-brands fa-whatsapp hover:text-yellow-500 cursor-pointer"
+              ></i>
             </a>
           </div>
         </div>
