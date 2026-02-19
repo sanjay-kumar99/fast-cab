@@ -12,6 +12,14 @@
     />
 
     <link rel="stylesheet" href="css/style.css" />
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   </head>
 
   <body class="bg-gray-100">
@@ -55,9 +63,12 @@
           <h3 class="text-xl font-bold text-gray-800">
             Maruti Ertiga (7 Seater)
           </h3>
-          <p class="text-sm text-gray-600 mt-2">₹22 / km • AC • Spacious</p>
+          <p class="text-sm text-gray-600 mt-2">₹17 / km • AC • Spacious</p>
+          <p class="text-xs text-gray-700 font-semibold mt-1">
+            * Toll, Interstate & Parking charges extra
+          </p>
           <button
-            onclick="openBooking()"
+            onclick="openBooking(17)"
             class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
           >
             BOOK NOW
@@ -80,8 +91,11 @@
             Swift Dzire (5 Seater)
           </h3>
           <p class="text-sm text-gray-600 mt-2">₹15 / km • AC • Comfortable</p>
+          <p class="text-xs text-gray-700 font-semibold mt-1">
+            * Toll, Interstate & Parking charges extra
+          </p>
           <button
-            onclick="openBooking()"
+            onclick="openBooking(15)"
             class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
           >
             BOOK NOW
@@ -102,10 +116,13 @@
         <div class="p-5">
           <h3 class="text-xl font-bold text-gray-800">Celerio (5 Seater)</h3>
           <p class="text-sm text-gray-600 mt-2">
-            ₹15 / km • AC •Budget Friendly
+            ₹14 / km • AC •Budget Friendly
+          </p>
+          <p class="text-xs text-gray-700 font-semibold mt-1">
+            * Toll, Interstate & Parking charges extra
           </p>
           <button
-            onclick="openBooking()"
+            onclick="openBooking(14)"
             class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
           >
             BOOK NOW
@@ -128,10 +145,13 @@
             Maruti Wagonar (5 Seater)
           </h3>
           <p class="text-sm text-gray-600 mt-2">
-            ₹12 / km • AC • Budget Friendly
+            ₹14 / km • AC • Budget Friendly
+          </p>
+          <p class="text-xs text-gray-700 font-semibold mt-1">
+            * Toll, Interstate & Parking charges extra
           </p>
           <button
-            onclick="openBooking()"
+            onclick="openBooking(14)"
             class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
           >
             BOOK NOW
@@ -154,10 +174,13 @@
             Hyundai Aura (5 Seater)
           </h3>
           <p class="text-sm text-gray-600 mt-2">
-            ₹18 / km • AC • Budget Friendly
+            ₹16 / km • AC • Budget Friendly
+          </p>
+          <p class="text-xs text-gray-700 font-semibold mt-1">
+            * Toll, Interstate & Parking charges extra
           </p>
           <button
-            onclick="openBooking()"
+            onclick="openBooking(16)"
             class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
           >
             BOOK NOW
@@ -178,10 +201,13 @@
         <div class="p-5">
           <h3 class="text-xl font-bold text-gray-800">Kia Carens (7 Seater)</h3>
           <p class="text-sm text-gray-600 mt-2">
-            ₹15 / km • AC • Budget Friendly
+            ₹20 / km • AC • Budget Friendly
+          </p>
+          <p class="text-xs text-gray-700 font-semibold mt-1">
+            * Toll, Interstate & Parking charges extra
           </p>
           <button
-            onclick="openBooking()"
+            onclick="openBooking(20)"
             class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
           >
             BOOK NOW
@@ -204,10 +230,13 @@
             Toyota Rumion (7 Seater)
           </h3>
           <p class="text-sm text-gray-600 mt-2">
-            ₹25 / km • AC • Premium Comfort
+            ₹18 / km • AC • Premium Comfort
+          </p>
+          <p class="text-xs text-gray-700 font-semibold mt-1">
+            * Toll, Interstate & Parking charges extra
           </p>
           <button
-            onclick="openBooking()"
+            onclick="openBooking(18)"
             class="mt-4 w-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-semibold py-2 rounded-lg shadow-md hover:opacity-90 transition"
           >
             BOOK NOW
@@ -253,6 +282,29 @@
           type="datetime-local"
           class="w-full border p-2 mb-3"
         />
+        <!-- Distance & Price -->
+        <div class="mb-2">
+          <button
+            onclick="calculateFare()"
+            class="w-full bg-blue-600 text-white py-2 rounded mb-2"
+          >
+            Calculate Distance & Fare
+          </button>
+
+          <input
+            id="distance"
+            placeholder="Distance (km)"
+            class="w-full border p-2 mb-2 bg-gray-100"
+            readonly
+          />
+
+          <input
+            id="fare"
+            placeholder="Estimated Fare (₹)"
+            class="w-full border p-2 bg-gray-100"
+            readonly
+          />
+        </div>
 
         <button
           onclick="submitBooking()"
@@ -357,6 +409,8 @@
 
     <!-- JS -->
     <script>
+      let selectedRate = 0;
+
       // ===== URL BASED AUTO FILTER (From Home Page) =====
       const params = new URLSearchParams(window.location.search);
       const type = params.get("type");
@@ -376,7 +430,8 @@
       });
 
       // ===== MODAL FUNCTIONS =====
-      function openBooking() {
+      function openBooking(rate) {
+        selectedRate = rate;
         document.getElementById("bookingModal").classList.remove("hidden");
       }
 
@@ -404,6 +459,47 @@
           .catch(() => {
             alert("Server Error ❌");
           });
+      }
+      async function calculateFare() {
+        const pickup = document.getElementById("pickup").value;
+        const drop = document.getElementById("drop").value;
+
+        if (!pickup || !drop) {
+          alert("Enter pickup & drop location");
+          return;
+        }
+
+        try {
+          // Convert location name → coordinates
+          const geo1 = await fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&q=${pickup}`,
+          ).then((r) => r.json());
+
+          const geo2 = await fetch(
+            `https://nominatim.openstreetmap.org/search?format=json&q=${drop}`,
+          ).then((r) => r.json());
+
+          if (!geo1.length || !geo2.length) {
+            alert("Location not found");
+            return;
+          }
+
+          const start = `${geo1[0].lon},${geo1[0].lat}`;
+          const end = `${geo2[0].lon},${geo2[0].lat}`;
+
+          // Route distance
+          const route = await fetch(
+            `https://router.project-osrm.org/route/v1/driving/${start};${end}?overview=false`,
+          ).then((r) => r.json());
+
+          const km = route.routes[0].distance / 1000;
+          const fare = km * selectedRate;
+
+          document.getElementById("distance").value = km.toFixed(2);
+          document.getElementById("fare").value = Math.round(fare);
+        } catch (e) {
+          alert("Error calculating distance");
+        }
       }
     </script>
   </body>
