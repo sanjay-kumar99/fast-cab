@@ -440,23 +440,36 @@
       }
 
       function submitBooking() {
-        fetch("https://fast-cab.onrender.com/api/book", {
+        const name = document.getElementById("userName").value;
+        const phone = document.getElementById("userPhone").value;
+        const pickup = document.getElementById("pickup").value;
+        const drop_location = document.getElementById("drop").value;
+        const ride_datetime = document.getElementById("rideDate").value;
+
+        if (!name || !phone || !pickup || !drop_location || !ride_datetime) {
+          alert("Please fill all fields");
+          return;
+        }
+
+        fetch("https://fast-cab.onrender.com/api/bookings", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            name: document.getElementById("userName").value,
-            phone: document.getElementById("userPhone").value,
-            pickup: document.getElementById("pickup").value,
-            drop_location: document.getElementById("drop").value,
-            ride_datetime: document.getElementById("rideDate").value,
+            name,
+            phone,
+            pickup,
+            drop_location,
+            ride_datetime,
           }),
         })
           .then((res) => res.json())
-          .then(() => {
+          .then((data) => {
+            console.log(data);
             alert("Booking Successful ✅");
             closeBooking();
           })
-          .catch(() => {
+          .catch((err) => {
+            console.error(err);
             alert("Server Error ❌");
           });
       }

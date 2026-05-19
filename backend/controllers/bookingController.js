@@ -1,50 +1,50 @@
-const db = require("../db");
+import Booking from "../models/Booking.js";
 
-exports.createBooking = (req, res) => {
-  const { name, phone, pickup, drop_location, ride_datetime } = req.body;
+export const createBooking = async (req, res) => {
+  try {
+    console.log("REQ BODY:", req.body);
 
-  // Validation
-  if (!name || !phone || !pickup || !drop_location || !ride_datetime) {
-    return res
-      .status(400)
-      .json({ success: false, message: "All fields required" });
-  }
+    const { name, phone, pickup, drop_location, ride_datetime } = req.body;
 
-  // SQL Query Fix: status aur created_at dono add kar diye hain
-  const sql =
-    "INSERT INTO bookings (name, phone, pickup, drop_location, ride_datetime, status, created_at) VALUES (?, ?, ?, ?, ?, 'Pending', NOW())";
-
-  db.query(
-    sql,
-    [name, phone, pickup, drop_location, ride_datetime],
-    (err, result) => {
-      if (err) {
-        console.error("DATABASE ERROR:", err);
-        return res.status(500).json({
-          success: false,
-          message: "Database error: " + err.sqlMessage,
-        });
-      }
-      // ✅ Print booking details in terminal
-      console.log("New Booking Added:", {
-        id: result.insertId,
-        name,
-        phone,
-        pickup,
-        drop_location,
-        ride_datetime,
-        status: "Pending",
+    if (!name || !phone || !pickup || !drop_location || !ride_datetime) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields required",
       });
+    }
 
-      res.json({ success: true, message: "Booking saved" });
-    },
-  );
+    const booking = await Booking.create({
+      name,
+      phone,
+      pickup,
+      drop_location,
+      ride_datetime,
+    });
+
+    console.log("BOOKING SAVED:", booking);
+
+    res.status(201).json({ success: true, booking });
+  } catch (error) {
+    console.log("FULL ERROR:", error); // 👈 ADD THIS
+
+    res.status(500).json({
+      success: false,
+      message: error?.message || "Unknown Database Error",
+      error: error, // temporary debugging
+    });
+  }
 };
+export const getAllBookings = async (req, res) => {
+  try {
+    const bookings = await Booking.find().sort({ createdAt: -1 });
 
-exports.getAllBookings = (req, res) => {
-  const sql = "SELECT * FROM bookings ORDER BY id DESC";
-  db.query(sql, (err, results) => {
-    if (err) return res.status(500).json({ success: false, error: err });
-    res.json(results);
-  });
+    res.json(bookings);
+  } catch (error) {
+    console.log(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
 };

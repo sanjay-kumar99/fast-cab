@@ -1,9 +1,9 @@
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
 module.exports = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: "yourmail@gmail.com",
-    pass: "your_app_password"
-  }
+    pass: "your_app_password",
+  },
 });

@@ -3,11 +3,18 @@ fetch("https://fast-cab.onrender.com/api/bookings")
   .then((data) => {
     const table = document.getElementById("bookingTable");
 
+    table.innerHTML = "";
+
+    if (!Array.isArray(data)) {
+      console.error("Invalid response:", data);
+      return;
+    }
+
     data.forEach((booking) => {
       const row = document.createElement("tr");
 
       row.innerHTML = `
-        <td>${booking.id}</td>
+        <td>${booking._id}</td>
         <td>${booking.name}</td>
         <td>${booking.phone}</td>
         <td>${booking.pickup}</td>

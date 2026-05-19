@@ -166,6 +166,7 @@
       <h2>Book Your Cab</h2>
 
       <form
+        id="bookingForm"
         class="booking-form relative overflow-hidden rounded-xl text-dark"
         onsubmit="
           event.preventDefault();
@@ -225,7 +226,7 @@
 
         try {
           const response = await fetch(
-            "https://fast-cab.onrender.com/api/book",
+            "https://fast-cab.onrender.com/api/bookings",
             {
               method: "POST",
               headers: { "Content-Type": "application/json" },
@@ -239,7 +240,7 @@
             alert("✅ Booking Successful!");
             // Form reset
             document.getElementById("contactForm")?.reset();
-            document.querySelector(".booking-form")?.reset(); // agar id nahi hai to class se
+            document.getElementById("bookingForm").reset(); // agar id nahi hai to class se
 
             window.location.href = "admin.html";
           } else {
@@ -369,7 +370,7 @@
 
     <script>
       function submitHomeBooking() {
-        fetch("https://fast-cab.onrender.com/api/book", {
+        fetch("https://fast-cab.onrender.com/api/bookings", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({

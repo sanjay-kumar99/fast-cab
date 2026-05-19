@@ -1,10 +1,13 @@
-const express = require("express");
+import express from "express";
+import {
+  createBooking,
+  getAllBookings,
+} from "../controllers/bookingController.js";
+
 const router = express.Router();
-const bookingController = require("../controllers/bookingController");
 
 // POST booking API
-router.post("/book", bookingController.createBooking);
-router.get("/bookings", bookingController.getAllBookings);
+router.post("/bookings", createBooking);
+router.get("/bookings", getAllBookings);
 
-
-module.exports = router;
+export default router;
